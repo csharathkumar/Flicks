@@ -23,7 +23,7 @@ public class DetailActivity extends AppCompatActivity {
             movie = (Movie) getIntent().getSerializableExtra(EXTRA_MOVIE);
             if(movie != null){
                 activityDetailBinding.titleTV.setText(movie.getOriginalTitle());
-                activityDetailBinding.releaseDateTV.setText(movie.getReleaseDate());
+                activityDetailBinding.releaseDateTV.setText(String.format("%s - %s", getString(R.string.release_date), movie.getReleaseDate()));
                 activityDetailBinding.overviewTV.setText(movie.getOverview());
                 activityDetailBinding.ratingBar.setRating(movie.getAverageRating().floatValue()/2);
                 Picasso.with(this).load(movie.getBackdropPath())

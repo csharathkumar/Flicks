@@ -9,11 +9,26 @@
         android:paddingRight="@dimen/activity_horizontal_margin"
         android:paddingTop="@dimen/activity_vertical_margin"
         tools:context="com.codepath.flicks.DetailActivity">
-        <ImageView
-            tools:src="@mipmap/ic_launcher"
+        <FrameLayout android:id="@+id/frameLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/backdropIV" />
+            android:layout_margin="3dp"
+            android:layout_gravity="center_horizontal|center_vertical" >
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/backdropIV"
+                tools:src="@mipmap/ic_launcher"/>
+
+            <ImageView
+                android:id="@+id/VideoPreviewPlayButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@mipmap/ic_play_circle_filled_white" />
+
+        </FrameLayout>
 
         <TextView
             android:layout_width="wrap_content"
@@ -21,7 +36,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             tools:text="Captain America : The Civil War"
             android:id="@+id/titleTV"
-            android:layout_below="@+id/backdropIV"
+            android:layout_below="@+id/frameLayout"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginTop="10dp" />
