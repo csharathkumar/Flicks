@@ -25,7 +25,7 @@ public class DetailActivity extends AppCompatActivity {
                 activityDetailBinding.titleTV.setText(movie.getOriginalTitle());
                 activityDetailBinding.releaseDateTV.setText(movie.getReleaseDate());
                 activityDetailBinding.overviewTV.setText(movie.getOverview());
-                activityDetailBinding.ratingBar.setRating(movie.getAverageRating().floatValue());
+                activityDetailBinding.ratingBar.setRating(movie.getAverageRating().floatValue()/2);
                 Picasso.with(this).load(movie.getBackdropPath())
                         .placeholder(R.mipmap.ic_image_black)
                         .into(activityDetailBinding.backdropIV);

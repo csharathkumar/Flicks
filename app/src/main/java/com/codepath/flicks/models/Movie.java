@@ -37,10 +37,12 @@ public class Movie implements Serializable{
         return imageUrl;
     }
     public String getBackdropPath(){
-        return TagFormat.from(Constants.IMAGE_URL)
+        String imageUrl = TagFormat.from(Constants.IMAGE_URL)
                 .with("IMAGE_SIZE",Constants.BACKDROP_IMAGE_SIZE)
                 .with("POSTER_PATH",backdropPath)
                 .format();
+        Log.d(TAG,"Backdrop Image Url is -"+imageUrl);
+        return imageUrl;
     }
     public String getOriginalTitle() {
         return originalTitle;
