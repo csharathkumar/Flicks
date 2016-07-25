@@ -8,12 +8,16 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.codepath.flicks.DetailActivity;
 import com.codepath.flicks.R;
 import com.codepath.flicks.models.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
+
+import jp.wasabeef.picasso.transformations.RoundedCornersTransformation;
 
 /**
  * Created by Sharath on 7/23/16.
@@ -62,6 +66,7 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
                 LayoutInflater inflater = LayoutInflater.from(getContext());
                 convertView = inflater.inflate(R.layout.item_popular_movie,parent,false);
                 popularMovieViewHolder.ivMovieBackdrop = (ImageView) convertView.findViewById(R.id.ivMovieImage);
+                popularMovieViewHolder.ivPlayButton = (ImageView) convertView.findViewById(R.id.VideoPreviewPlayButton);
                 convertView.setTag(popularMovieViewHolder);
             }
 
@@ -74,12 +79,20 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
             movieViewHolder.tvOriginalTitle.setText(movie.getOverview());
             Picasso.with(getContext()).load(movie.getPosterPath(orientation))
                     .placeholder(R.mipmap.ic_image_black)
+                    .transform(new RoundedCornersTransformation(15, 15))
                     .into(movieViewHolder.ivMoviePoster);
         }else if(rowType == POPULAR_MOVIE_VIEW_TYPE){
             popularMovieViewHolder = (PopularMovieViewHolder) convertView.getTag();
             popularMovieViewHolder.ivMovieBackdrop.setImageResource(0);
+            popularMovieViewHolder.ivPlayButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(getContext(),"Play button clicked. Start a youtube video activity",Toast.LENGTH_SHORT).show();
+                }
+            });
             Picasso.with(getContext()).load(movie.getBackdropPath())
                     .placeholder(R.mipmap.ic_image_black)
+                    .transform(new RoundedCornersTransformation(15, 15))
                     .into(popularMovieViewHolder.ivMovieBackdrop);
         }
 
@@ -93,5 +106,6 @@ public class MovieArrayAdapter extends ArrayAdapter<Movie>{
     }
     public static class PopularMovieViewHolder{
         ImageView ivMovieBackdrop;
+        ImageView ivPlayButton;
     }
 }

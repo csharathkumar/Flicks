@@ -24,13 +24,15 @@ The following **optional** features are implemented:
 * [ ] Add a play icon overlay to popular movies to indicate that the movie can be played
 * [ ] Leverage the data binding support module to bind data into main and detail activities.
 * [ ] Improve the user interface through styling and coloring.
+* [ ] Add a rounded corners for the images using the Picasso transformations. 
 
 
 ## Video Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-![Alt text](flicks_demo.gif?raw=true "Demo")
+![Alt text](flicks_demo_potrait.gif?raw=true "Potrait Demo")
+![Alt text](flicks_demo_landscape.gif?raw=true "Landscape Demo")
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

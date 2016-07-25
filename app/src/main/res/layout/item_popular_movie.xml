@@ -9,6 +9,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:scaleType="fitStart"
+        android:adjustViewBounds="true"
         android:id="@+id/ivMovieImage"
         tools:src="@mipmap/ic_launcher"/>
 

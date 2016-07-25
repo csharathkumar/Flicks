@@ -19,6 +19,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         tools:text="Captain America: Civil War"
         android:id="@+id/tvTitle"
+        android:layout_marginLeft="5dp"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/ivMovieImage"
         android:layout_toEndOf="@+id/ivMovieImage" />
@@ -26,6 +27,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         tools:text="Political interference in the Avengers' activities causes a rift between former allies Captain America and Iron Man.
 
 "
